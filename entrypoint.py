@@ -8,7 +8,6 @@ from zabbix import ZabbixInterface
 def help(listput):
     if not type(listput) == list:
         raise Exception("Cli accepts only <list> type as input")
-
     for file in listput:
         with open(file) as f:
             print(f.read())
