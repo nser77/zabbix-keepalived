@@ -28,7 +28,7 @@ commands=[
 ]
 
 if not arg in commands:
-    cli(["LICENSE", "HELP"])
+    help(["LICENSE", "HELP"])
     exit()
     sys.exit()
 
@@ -41,8 +41,8 @@ elif   arg == '--strict-mode':         ZabbixInterface.output(ZabbixInterface.in
 elif   arg == '--become-master':       ZabbixInterface.output(ZabbixInterface.intToString(k.become_master))
 elif   arg == '--last-transition':     ZabbixInterface.output(k.last_transition)
 elif   arg == '--bool-example':        ZabbixInterface.output(ZabbixInterface.intToString(ZabbixInterface.boolToInt(True)))
-elif   arg == '--license':             cli(["LICENSE"])
-elif   arg == '--help':                cli(["LICENSE", "HELP"])
+elif   arg == '--license':             help(["LICENSE"])
+elif   arg == '--help':                help(["LICENSE", "HELP"])
 
 exit()
 sys.exit()
