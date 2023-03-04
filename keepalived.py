@@ -5,13 +5,15 @@ from datetime import datetime
 
 from json import load
 
-class Keepalived(object):
-    def __init__(self, json):
-        self.populateData(json[0]['data'])
-        self.populateStats(json[0]['stats'])
+class KeepalivedBase(object):
+    human_data_convertion='%Y-%m-%d %H:%M:%S'
 
-    def populateData(self, data):
-        # crear clase super
+    def timestampToHuman(self, timestamp):
+        human = datetime.fromtimestamp(timestamp).strftime(self.human_data_convertion)
+        return human
+
+class KeepalivedData(KeepalivedBase):
+    def data(self, data):
         self.iname =                  data['iname']
         self.dont_track_primary =     data['dont_track_primary']
         self.skip_check_adv_addr =    data['skip_check_adv_addr']
@@ -24,13 +26,17 @@ class Keepalived(object):
         self.garp_refresh =           data['garp_refresh']
 
     def setLastTransition(self, last_transition):
-        self.last_transition = datetime.fromtimestamp(last_transition).strftime('%Y-%m-%d %H:%M:%S')
-        return None
+        self.last_transition = self.timestampToHuman(last_transition)
 
-    def populateStats(self, stats):
-        # crear clase super
-        self.advert_rcvd              = stats['advert_rcvd']
-        self.become_master            = stats['become_master']
+class KeepalivedStats(KeepalivedBase):
+    def stats(self, stats):
+        self.advert_rcvd =            stats['advert_rcvd']
+        self.become_master =          stats['become_master']
+
+class Keepalived(KeepalivedData, KeepalivedStats):
+    def __init__(self, json):
+        self.data(json[0]['data'])
+        self.stats(json[0]['stats'])
 
 class KeepalivedInterface():
     pid = '/run/keepalived/keepalived.pid'
