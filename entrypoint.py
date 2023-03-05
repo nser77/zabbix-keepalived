@@ -2,7 +2,7 @@
 
 import sys
 
-from keepalived import KeepalivedInterface
+from keepalived.wrapper import KeepalivedInterface
 from zabbix import ZabbixInterface
 
 def help(listput):
