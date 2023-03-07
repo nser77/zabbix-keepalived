@@ -31,17 +31,20 @@ if not arg in commands:
     exit()
     sys.exit()
 
-k=KeepalivedInterface.getKeepalived()
+# this should be a cli param
+instance="VI_1"
 
-if     arg == '--iname':               ZabbixInterface.output(k.iname)
-elif   arg == '--dont-track-primary':  ZabbixInterface.output(ZabbixInterface.intToString(k.dont_track_primary))
-elif   arg == '--skip-check-adv-addr': ZabbixInterface.output(ZabbixInterface.intToString(k.skip_check_adv_addr))
-elif   arg == '--strict-mode':         ZabbixInterface.output(ZabbixInterface.intToString(k.strict_mode))
-elif   arg == '--become-master':       ZabbixInterface.output(ZabbixInterface.intToString(k.become_master))
-elif   arg == '--last-transition':     ZabbixInterface.output(k.last_transition)
-elif   arg == '--bool-example':        ZabbixInterface.output(ZabbixInterface.intToString(ZabbixInterface.boolToInt(True)))
-elif   arg == '--license':             help(["LICENSE"])
-elif   arg == '--help':                help(["LICENSE", "HELP"])
+for k in KeepalivedInterface.getVrrp():
+    if k.iname == instance:
+        if     arg == '--iname':               ZabbixInterface.output(k.iname)
+        elif   arg == '--dont-track-primary':  ZabbixInterface.output(ZabbixInterface.intToString(k.dont_track_primary))
+        elif   arg == '--skip-check-adv-addr': ZabbixInterface.output(ZabbixInterface.intToString(k.skip_check_adv_addr))
+        elif   arg == '--strict-mode':         ZabbixInterface.output(ZabbixInterface.intToString(k.strict_mode))
+        elif   arg == '--become-master':       ZabbixInterface.output(ZabbixInterface.intToString(k.become_master))
+        elif   arg == '--last-transition':     ZabbixInterface.output(k.last_transition)
+        elif   arg == '--bool-example':        ZabbixInterface.output(ZabbixInterface.intToString(ZabbixInterface.boolToInt(True)))
+        elif   arg == '--license':             help(["LICENSE"])
+        elif   arg == '--help':                help(["LICENSE", "HELP"])
 
 exit()
 sys.exit()
