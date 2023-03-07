@@ -13,26 +13,12 @@ def help(listput):
             print(f.read())
 
 try:
-    arg=sys.argv[1]
+    instance = sys.argv[1]
+    arg = sys.argv[2]
 except:
     help(["LICENSE", "HELP"])
     exit()
     sys.exit()
-
-commands=[
-    "--iname", "--dont-track-primary", '--skip-check-adv-addr',
-    "--become-master", "--last-transition",
-    "--bool-example",
-    "--help", "--license"
-]
-
-if not arg in commands:
-    help(["LICENSE", "HELP"])
-    exit()
-    sys.exit()
-
-# this should be a cli param
-instance="VI_1"
 
 for k in KeepalivedInterface.getVrrp():
     if k.iname == instance:
