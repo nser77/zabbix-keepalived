@@ -52,7 +52,6 @@ for k in KeepalivedInterface.getVrrp():
         elif   arg == '--script-master':            ZabbixInterface.output(k.script_master)
         elif   arg == '--script-fault':             ZabbixInterface.output(k.script_fault)
         elif   arg == '--script-stop':              ZabbixInterface.output(k.script_stop)
-        elif   arg == '--script-stop':              ZabbixInterface.output(k.script_stop)
         # stats
         elif   arg == '--advert-rcvd':              ZabbixInterface.output(ZabbixInterface.intToString(k.advert_rcvd))
         elif   arg == '--advert-sent':              ZabbixInterface.output(ZabbixInterface.intToString(k.advert_sent))
