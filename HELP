@@ -5,9 +5,9 @@
 
     Data:
       --iname:                VRRP instance name
-      --dont-track-primary:   None
-      --skip-check-adv-addr:  None
-      --stric-mode            VRRPv3 Strict mode
+      --dont-track-primary:   Ignore VRRP interface faults.
+      --skip-check-adv-addr:  Checking all the addresses in a received VRRP advert.
+      --stric-mode            VRRPv3 strict mode
       --last-transition:      Last state transition.
 
     Stats:
