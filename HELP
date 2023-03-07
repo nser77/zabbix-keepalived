@@ -1,8 +1,8 @@
 
   Usage is:
-  
     entrypoint.py <instance> <option>
 
+  Options:
     Data:
       --iname:                VRRP instance name
       --dont-track-primary:   Ignore VRRP interface faults.
@@ -13,6 +13,6 @@
     Stats:
       --become-master:        Is the current node in Master state?
                                 0 = False
-                                1 = True                  
-    Example:
-      ./entrypoint.py VI_1 --become-master
+                                1 = True
+  Example:
+    ./entrypoint.py VI_1 --become-master
