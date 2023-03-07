@@ -1,0 +1,18 @@
+
+  Usage is:
+  
+    entrypoint.py <instance> <option>
+
+    Data:
+      --iname:                VRRP instance name
+      --dont-track-primary:   None
+      --skip-check-adv-addr:  None
+      --stric-mode            VRRPv3 Strict mode
+      --last-transition:      Last state transition.
+
+    Stats:
+      --become-master:        Is the current node in Master state?
+                                0 = False
+                                1 = True                  
+    Example:
+      ./entrypoint.py VI_1 --become-master
