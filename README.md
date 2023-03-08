@@ -7,3 +7,15 @@ In this article [```Command execution appendix```](https://www.zabbix.com/docume
 There a lot of choices to run remote commands with ZABBIX Agent:
  - [User parameters](https://www.zabbix.com/documentation/current/en/manual/config/items/userparameters)
  - [system.run](https://www.zabbix.com/documentation/current/en/manual/config/items/itemtypes/zabbix_agent#system.runcommandmode)
+
+## Installation
+
+```
+root@ubuntu:/opt# git clone https://github.com/nser77/zabbix-keepalived.git
+root@ubuntu:/opt# cd zabbix-keepalived/
+root@ubuntu:/opt# virtualenv ./virtualenv
+root@ubuntu:/opt# source ./virtualenv/bin/activate
+(virtualenv) root@ubuntu:/opt# pip install -r requirements.txt
+(virtualenv) root@ubuntu:/opt# deactivate
+root@ubuntu:/opt# chmod +x entrypoint.py
+```
