@@ -2,7 +2,7 @@
   Usage is:
     entrypoint.py <instance> <option>
       <instance> = case sensitive instasnce name to filter out.
-      <option>   = case sensitive options listed above.
+      <option>   = case sensitive option listed above.
       
           Data:
             --iname:                VRRP instance name
