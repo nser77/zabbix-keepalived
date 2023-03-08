@@ -1,18 +1,19 @@
 
   Usage is:
     entrypoint.py <instance> <option>
+      <instance> = case sensitive instasnce name to filter out.
+      <option>   = case sensitive options listed above.
+      
+          Data:
+            --iname:                VRRP instance name
+            --dont-track-primary:   Ignore VRRP interface faults.
+            --skip-check-adv-addr:  Checking all the addresses in a received VRRP advert.
+            --stric-mode            VRRPv3 strict mode
+            --last-transition:      Last state transition.
 
-  Options:
-    Data:
-      --iname:                VRRP instance name
-      --dont-track-primary:   Ignore VRRP interface faults.
-      --skip-check-adv-addr:  Checking all the addresses in a received VRRP advert.
-      --stric-mode            VRRPv3 strict mode
-      --last-transition:      Last state transition.
-
-    Stats:
-      --become-master:        Is the current node in Master state?
-                                0 = False
-                                1 = True
+          Stats:
+            --become-master:        Is the current node in Master state?
+                                      0 = False
+                                      1 = True
   Example:
     ./entrypoint.py VI_1 --become-master
