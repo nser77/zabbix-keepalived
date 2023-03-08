@@ -15,7 +15,10 @@ root@ubuntu:/opt/zabbix-keepalived# source ./virtualenv/bin/activate
 ## Usage
 For more information see the [```HELP```](HELP) file.
 ```
-root@ubuntu:/opt/zabbix-keepalived# ./virtualenv/bin/python entrypoint.py VI_1 --become-master
+root@ubuntu:/opt/zabbix-keepalived# ./virtualenv/bin/python entrypoint.py VI_2 --vrid
+98
+root@ubuntu:/opt/zabbix-keepalived# ./virtualenv/bin/python entrypoint.py VI_1 --vrid
+99
 ```
 
 ## Permissions
